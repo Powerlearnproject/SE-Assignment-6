@@ -1,0 +1,104 @@
+SE-Assignment-6
+Assignment: Introduction to Python Instructions: Answer the following questions based on your understanding of Python programming. Provide detailed explanations and examples where appropriate.
+Questions:
+1.	Python Basics:
+o	What is Python, and what are some of its key features that make it popular among developers? Provide examples of use cases where Python is particularly effective.
+Python is a high-level interpreted programming language known for its simplicity and readability. Some of its popular features include: 
+Easy syntax and its straightforwardness , Its versatile nature: can be used for web development, data analysis, AI, scientific computing etc,
+It has extensive libraries too.
+Examples of use case: Machine learning with libraries like TensorFlow, scikit-learn, Data Analysis with libraries like Panda and NumPy, Web development using frameworks like Django and flask and writing scripts for automation tasks.
+2.	Installing Python:
+o	Describe the steps to install Python on your operating system (Windows, macOS, or Linux). Include how to verify the installation and set up a virtual environment.
+Download Python installer from https://www.python.org, run the installer and ensure you check “Add Python To PATH” then follow the installation prompts. This is for windows.
+Then verify installation: by typing “python –version” in the command prompt.
+Then Set Up a Virtual Environment “python -m venv myenv”, activate it by “myenv\Scripts\activate”
+This applies to windows OS.
+3.	Python Syntax and Semantics:
+o	Write a simple Python program that prints "Hello, World!" to the console. Explain the basic syntax elements used in the program.
+print(“Hello, World! ”)
+print: a function that outputs text to console
+“Hello, World! “: A string, which is a sequence of characters enclosed in quotes.
+4.	Data Types and Variables:
+o	List and describe the basic data types in Python. Write a short script that demonstrates how to create and use variables of different data types.
+int: Integer example 90
+str: String example: “Shar” 
+bool: Boolean example “True” or “False”
+float: Floating-point number e.g “3.14”
+dict: Dictionary, key-value pairs example  ‘{ “key”: ”value”}’
+Code example:
+#float
+pi = 3.14
+#integer
+year = 2006
+#string
+name = “Shirley”
+#list
+Numbers = [1,2,3,4,5,6,7]
+#Dictionary
+homes = [“Mansion”, “Bungalow”, “Cottage”]
+#boolean
+is_student = True
+5.	Control Structures:
+o	Explain the use of conditional statements and loops in Python. Provide examples of an if-else statement and a for loop.
+Conditional statements are used to perform a certain task bases on a specified condition. Loops are used repetitively until a certain condition is met.
+Example: 
+age = 20
+if age >= 18:
+	print(“Adult”) 
+else:
+	print(“Minor”)
+for i in range(5): 
+	print(i)
+6.	Functions in Python:
+o	What are functions in Python, and why are they useful? Write a Python function that takes two arguments and returns their sum. Include an example of how to call this function.
+Functions are reusable blocks of code that perform a specific task, they help organize code, reduce redundancy and improve readability.
+Example:
+def sum(a,b):
+	return a +b
+	result = sum(4,6) #calling of the function
+print(result) #output is 10
+7.	Lists and Dictionaries:
+o	Describe the differences between lists and dictionaries in Python. Write a script that creates a list of numbers and a dictionary with some key-value pairs, then demonstrates basic operations on both.
+A list is are ordered collections of elements while a dictionary is an unordered collection of key-value pairs.
+Example:
+#list
+numbers = [1,2,3,4,5,6,7,8,9,0]
+print(numbers[7]) #accessing the eighth element which is 8
+#dictionary
+person ={“name”: “Anna”, “age”: 30}
+print(person[“name”]) #accessing value by key, returns “Anna” 
+#Adding elements
+numbers.append(10)
+person[“city”] = “Nairobi”
+8.	Exception Handling:
+o	What is exception handling in Python? Provide an example of how to use try, except, and finally blocks to handle errors in a Python script.
+Exception handling is used to manage errors gracefully without stopping the program
+Example:
+try:
+	result = 10/0
+except ZeroDivisionError:
+	print(“Cannot divide by zero”)
+finally: 
+	print(“Execution completed”)
+
+9.	Modules and Packages:
+o	Explain the concepts of modules and packages in Python. How can you import and use a module in your script? Provide an example using the math module.
+Modules are files containing Python code which can be imported and used and Packages are directories containing multiple modules.
+An example of how we can import modules and use them:
+import math
+#use the math module
+result = math.sqrt(16)
+print(result) #output: 4.0
+10.	File I/O:
+o	How do you read from and write to files in Python? Write a script that reads the content of a file and prints it to the console, and another script that writes a list of strings to a file.
+An example of reading from a file:
+with open(“example.text”, “r”) as file:
+
+	content = file.read()
+	print(content)
+An example of writing to a file:
+lines = [“Hello, World”, “Python is great!”]
+with open(“output.txt”, “w”) as file:
+	for line in lines:
+		file.write(line + “\n”)
+
