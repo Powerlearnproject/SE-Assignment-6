@@ -1,0 +1,164 @@
+Assignment: Introduction to Python
+Python Basics:
+Question: What is Python, and what are some of its key features that make it popular among developers? Provide examples of use cases where Python is particularly effective.
+Answer: Python is a high-level, interpreted programming language known for its simplicity and readability. It supports multiple programming paradigms, including procedural, object-oriented, and functional programming. Key features include:
+•	Readable and Maintainable Code: Python’s syntax is clean and easy to understand, which helps developers write clear, logical code.
+•	Extensive Standard Library: Python comes with a rich standard library that provides modules and functions for various tasks, such as file handling, internet protocols, and data serialization.
+•	Cross-Platform Compatibility: Python can run on various operating systems, including Windows, macOS, and Linux.
+•	Large Community and Ecosystem: Python has a vast community that contributes to a wide array of open-source libraries and frameworks.
+Use Cases:
+•	Web Development: Using frameworks like Django and Flask.
+•	Data Science and Machine Learning: Using libraries like Pandas, NumPy, and TensorFlow.
+•	Automation and Scripting: For automating repetitive tasks.
+•	Software Testing: Using tools like pytest.
+Installing Python:
+Question: Describe the steps to install Python on your operating system (Windows, macOS, or Linux). Include how to verify the installation and set up a virtual environment.
+Answer:
+Windows:
+1.	Download the Python installer from the official website.
+2.	Run the installer and ensure you check the box "Add Python to PATH".
+3.	Follow the installation prompts.
+macOS:
+1.	Install Homebrew if not already installed: /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+2.	Install Python using Homebrew: brew install python
+Linux:
+1.	Update package lists: sudo apt update
+2.	Install Python: sudo apt install python3
+Verifying Installation:
+1.	Open a terminal or command prompt.
+2.	Type python --version or python3 --version.
+Setting Up a Virtual Environment:
+1.	Install the virtualenv package: pip install virtualenv
+2.	Create a virtual environment: virtualenv myenv
+3.	Activate the virtual environment:
+o	Windows: myenv\Scripts\activate
+o	macOS/Linux: source myenv/bin/activate
+Python Syntax and Semantics:
+Question: Write a simple Python program that prints "Hello, World!" to the console. Explain the basic syntax elements used in the program.
+Answer:
+ print ("Hello, World!")
+•	print: This is a built-in function that outputs text to the console.
+•	"Hello, World!": This is a string literal enclosed in double quotes.
+Data Types and Variables:
+4.	Run the installer and ensure you check the box "Add Python to PATH".
+5.	Follow the installation prompts.
+macOS:
+3.	Install Homebrew if not already installed: /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+4.	Install Python using Homebrew: brew install python
+Linux:
+3.	Update package lists: sudo apt update
+4.	Install Python: sudo apt install python3
+Verifying Installation:
+3.	Open a terminal or command prompt.
+4.	Type python --version or python3 --version.
+Setting Up a Virtual Environment:
+4.	Install the virtualenv package: pip install virtualenv
+5.	Create a virtual environment: virtualenv myenv
+6.	Activate the virtual environment:
+o	Windows: myenv\Scripts\activate
+o	macOS/Linux: source myenv/bin/activate
+Python Syntax and Semantics:
+Question: Write a simple Python program that prints "Hello, World!" to the console. Explain the basic syntax elements used in the program.
+Answer:
+ print ("Hello, World!")
+•	print: This is a built-in function that outputs text to the console.
+•	"Hello, World!": This is a string literal enclosed in double quotes.
+Data Types and Variables:
+
+# List
+e = [1, 2, 3]
+print(e, type(e))
+# Dictionary
+f = {"name": "Alice", "age": 25}
+print (f, type(f))
+Control Structures:
+Question: Explain the use of conditional statements and loops in Python. Provide examples of an if-else statement and a for loop.
+Answer:
+•	Conditional Statements: Used to execute code based on certain conditions.
+•	Loops: Used to execute a block of code repeatedly.
+Example of if-else:
+x = 10
+if x > 5:
+    print ("x is greater than 5")
+else:
+    print ("x is less than or equal to 5")
+
+Example of for loop:
+for i in range (5):
+    print(i)
+
+
+Functions in Python:
+Question: What are functions in Python, and why are they useful? Write a Python function that takes two arguments and returns their sum. Include an example of how to call this function.
+Answer: Functions are reusable blocks of code that perform a specific task. They help in reducing code repetition and improving modularity.
+Function Example:
+
+
+
+
+def add_numbers (a, b):
+  
+  return a + b
+
+# Calling the function
+
+result = add_numbers (5, 3)
+
+print(result)
+
+
+Lists and Dictionaries:
+Question: Describe the differences between lists and dictionaries in Python. Write a script that creates a list of numbers and a dictionary with some key-value pairs, then demonstrates basic operations on both.
+Answer:
+•	List: Ordered collection of items, accessed by index.
+•	Dictionary: Unordered collection of key-value pairs, accessed by keys.
+Script:
+# List
+numbers = [1, 2, 3, 4, 5]
+numbers.append(6)
+print(numbers)
+print(numbers[2])
+# Dictionary
+person = {"name": "Alice", "age": 25}
+person["city"] = "New York"
+print(person)
+print(person["name"])
+
+Exception Handling:
+Question: What is exception handling in Python? Provide an example of how to use try, except, and finally blocks to handle errors in a Python script.
+Answer: Exception handling allows the programmer to handle errors gracefully without crashing the program.
+Example:
+try:
+    result = 10 / 0
+except ZeroDivisionError:
+    print ("Cannot divide by zero!")
+finally:
+    print ("Execution completed.")
+
+Modules and Packages:
+Question: Explain the concepts of modules and packages in Python. How can you import and use a module in your script? Provide an example using the math module.
+Answer:
+•	Module: A file containing Python definitions and statements.
+•	Package: A collection of modules.
+Example using math module:
+import math
+
+print(math.sqrt(16))
+print(math.pi)
+
+File I/O:
+Question: How do you read from and write to files in Python? Write a script that reads the content of a file and prints it to the console, and another script that writes a list of strings to a file.
+Answer:
+Reading from a file:
+with open('example.txt', 'r') as file:
+    content = file.read()
+    print(content)
+
+
+Writing to a file:
+
+lines = ["Hello, World!", "Python is awesome!"]
+
+with open ('output.txt', 'w') as file:
+    for line in lines:
+        file.write(line + "\n")
