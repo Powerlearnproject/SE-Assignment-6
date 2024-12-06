@@ -1,0 +1,159 @@
+// Main app entry
+import 'package:flutter/material.dart';
+
+void main() => runApp(Visualizer2000());
+
+class Visualizer2000 extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData.dark(),
+      home: HomeScreen(),
+    );
+  }
+}
+
+// Home screen with bottom navigation
+
+class HomeScreen extends StatefulWidget {
+  @override
+  _HomeScreenState createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen> {
+  int _currentIndex = 0;
+
+  final List<Widget> _screens = [
+    LandingPage(),
+    UploadPage(),
+    ConvertPage(),
+    SettingsPage(),
+  ];
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: _screens[_currentIndex],
+      bottomNavigationBar: BottomNavigationBar(
+        currentIndex: _currentIndex,
+        onTap: (index) {
+          setState(() {
+            _currentIndex = index;
+          });
+        },
+        backgroundColor: Colors.black,
+        selectedItemColor: Colors.cyanAccent,
+        unselectedItemColor: Colors.grey,
+        items: [
+          BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
+          BottomNavigationBarItem(icon: Icon(Icons.upload), label: 'Upload'),
+          BottomNavigationBarItem(icon: Icon(Icons.autorenew), label: 'Convert'),
+          BottomNavigationBarItem(icon: Icon(Icons.settings), label: 'Settings'),
+        ],
+      ),
+    );
+  }
+}
+
+// Advanced user friendly features
+class UploadPage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: Colors.black,
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text(
+              'Upload Your Image',
+              style: TextStyle(fontSize: 24, color: Colors.cyanAccent),
+            ),
+            SizedBox(height: 20),
+            Icon(Icons.upload, size: 80, color: Colors.cyanAccent),
+            SizedBox(height: 20),
+            ElevatedButton(
+              onPressed: () {
+                // Handle image upload
+              },
+              child: Text('Choose Image'),
+              style: ElevatedButton.styleFrom(primary: Colors.cyanAccent),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+// Conversion page
+class ConvertPage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: Colors.black,
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text(
+              'Conversion in Progress',
+              style: TextStyle(fontSize: 24, color: Colors.cyanAccent),
+            ),
+            SizedBox(height: 40),
+            CircularProgressIndicator(color: Colors.cyanAccent),
+            SizedBox(height: 40),
+            ElevatedButton(
+              onPressed: () {
+                // Show result
+              },
+              child: Text('View Result'),
+              style: ElevatedButton.styleFrom(primary: Colors.cyanAccent),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+// Settings page
+
+class SettingsPage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: Colors.black,
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text(
+              'Settings',
+              style: TextStyle(fontSize: 24, color: Colors.cyanAccent),
+            ),
+            SizedBox(height: 20),
+            SwitchListTile(
+              title: Text('Dark Mode', style: TextStyle(color: Colors.white)),
+              value: true,
+              onChanged: (value) {
+                // Handle theme change
+              },
+            ),
+            Slider(
+              value: 50,
+              min: 10,
+              max: 100,
+              divisions: 5,
+              label: 'Quality: 50%',
+              onChanged: (value) {
+                // Handle quality adjustment
+              },
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
